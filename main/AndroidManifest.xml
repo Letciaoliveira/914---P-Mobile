@@ -1,0 +1,77 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.e.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+
+        <!-- Antes de mais nada, para quem não sabe, existem duas formas
+        de fechamento de uma tag no XML.
+                Primeiro, o fechamento reduzido ( /> ), onde a tag só tera a sua declaração
+            com os artributos.
+
+            Ex.: <TextView *atributos* />
+
+                Por último, o fechamento separado em outra tag ( </Elemento> ), onde a tag
+            terá sua declaração, seus atributos e seu fechamento separado em outra tag.
+
+            Ex.: <LinearLayout *atributos* ></LinearLayout>
+
+            ****Onde usar qual?
+
+                    O fechamento reduzido é utilizado somente quando não terão elementos
+                dentro de outro.
+
+                Ex.: <TextView *atributos* />
+
+                    O fechamento separado em outra tag será usado sempre quando um elemento
+                tiver mais elementos dentro dele.
+
+                Ex.: <LinearLayout *atributos* >
+
+                        <TextView *Atributos* />
+
+                     </LinearLayout>
+
+        -->
+
+        <!-- Declaração da Atividade Adicionar Contato -->
+        <activity android:name=".AtividadeAdicionarContato">
+
+            <!-- Declaração de um filtro de intenção -->
+
+            <intent-filter>
+                <!--  Declaração da ação da atividade, ou seja, uma
+                    ação específica pra essa atividade, como, neste
+                    caso, definir que a ação desta atividade é ser
+                    a atividade principal.
+                 -->
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--  Declaração da categoria da atividade, ou seja,
+                    uma categoria específica para essa atividade, como,
+                    neste caso, definir que a categoria desta atividade
+                    é ser a lançadora, logo, a primeira a iniciar
+                    ("LAUNCHER". Antigamente era usada a categoria
+                    "DEFAULT", porém, com as atualizações, essa categoria
+                    foi depreciada e hoje em dia se usa a LAUNCHER.). -->
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+
+        <!--  Declaração da atividade lista de contatos.
+            como ela não tem especificações, como a de
+            ser a principal, sua forma de fechar é
+            reduzida ( "/>" )
+        -->
+        <activity android:name=".AtividadeListaDeContatos" />
+
+    </application>
+</manifest>
